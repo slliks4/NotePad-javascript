@@ -1,7 +1,8 @@
 const CreateNote = async(note_data) => {
     const access_token = localStorage.getItem('access_token');
 
-    const url = 'http://127.0.0.1:8000/notes/';
+    const main_url = await Config();
+    const url = main_url+'notes/';
 
     try {
         const response = await fetch(url,{

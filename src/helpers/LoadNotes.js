@@ -1,7 +1,8 @@
 const LoadNotes = async() => {
     try {
         const access_token = localStorage.getItem('access_token');
-        const url = `http://127.0.0.1:8000/notes/`;
+        const main_url = await Config();
+        const url = main_url+`notes/`;
         const response = await fetch(url, {
             headers: {
                 'Content-Type': 'application/json',

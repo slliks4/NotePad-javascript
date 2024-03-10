@@ -1,5 +1,6 @@
 const Login = async(login_data) => {
-    const url = 'http://127.0.0.1:8000/token/';
+    const main_url = await Config();
+    const url = main_url+'token/';
 
     try {
         const response = await fetch(url,{

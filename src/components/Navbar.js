@@ -45,13 +45,14 @@ const getUser = async() => {
     const user = await UserFetch();
     if (user){
         if (!user.profile.profile_pic){
-            img_path = '/static/img/avatar.jpg';
+            img_path = '/public/static/img/avatar.jpg';
         }else{
-            img_path = `http://127.0.0.1:8000/${user.profile.profile_pic}`;
+            const main_url = await Config();
+            img_path = main_url+`${user.profile.profile_pic}`;
         }
         const required = document.querySelector('.required');
         required.innerHTML = `
-            <div>
+            <div onclick="SwitchPage({page:'home'})">
                 <img src="${img_path}" alt="">
                 <h1>welcome ${user.username}</h1>
             </div>

@@ -1,5 +1,6 @@
 async function UserFetch() { 
-    const url = 'http://127.0.0.1:8000/user_detail/';
+    const main_url = await Config();
+    const url = main_url+'user_detail/';
     const access_token = localStorage.getItem('access_token');
     
     try {
