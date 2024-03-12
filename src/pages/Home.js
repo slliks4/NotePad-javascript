@@ -1,3 +1,13 @@
+const LoadingPage = () => {
+    return (
+        `
+        <div class="loading-page">
+            <img src="/public/static/img/loading-gif.gif" alt="loading">
+        </div>
+        `
+    );
+};
+
 const Home = () => {
     BuildNotes();
     return (
